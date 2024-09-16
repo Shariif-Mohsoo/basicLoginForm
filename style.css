@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --color-white:#fff;
+    --color-black:#000;
+    --color-primary-1:#c850c0;
+    --color-primary-2:#4158d0;
+    --color-primary-3:#414112;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-weight: 500;
+    background-color: var(--color-black);
+    font-family: 'Times New Roman', Times, serif;
+}
+.container
+{
+    background:linear-gradient(to right top,teal 0,teal 25%,purple 25%,purple 75%,violet 75%,violet 100%);
+    height: 100vh;
+    position: relative;
+}
+.container .container__form
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 38rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 0 2rem var(--color-primary-1);
+}
+.container .container__form .title
+{
+    background: linear-gradient(-135deg,var(--color-primary-1),var(--color-primary-2));
+    text-align: center;
+    color: var(--color-white);
+    line-height: 8rem;
+    font-size: 4rem;
+    font-weight: 600;
+}
+.container .container__form #form
+{
+    padding: 1rem 3rem 5rem;
+}
+.container .container__form .field,
+.container .container__form .field:valid
+{
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+}
+.container .container__form form input
+{
+    height: 100%;
+    width: 100%;
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 0 2rem;
+    border-radius: 3rem;
+    border: .1rem solid grey;
+    outline: none;
+    transition: all .3s linear;
+}
+
+.container .container__form form input:focus
+{
+    border: .1rem solid var(--color-primary-3);
+}
+.container .container__form form label
+{
+    font-size: 1.6rem;
+    color: #999;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all .3s linear;
+}
+.container .container__form form input:focus ~ label,
+.container .container__form form input:valid ~ label
+{
+    top: 0;
+    color: var(--color-primary-3);
+    font-size: 1.5;
+    background-color: var(--color-white);
+}
+.container .container__form #form .pass-link 
+{
+    font-size: 1.8rem;
+    margin: 2rem 0 0 1rem;
+}
+.container .container__form form input[type="submit"]
+{
+    background: linear-gradient(-135deg,var(--color-primary-1),var(--color-primary-2));
+    font-size: 1.9rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--color-white);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+.container .container__form form input[type="submit"]:hover
+{
+    transform: translateY(-.4rem) scale(0.98);
+}
+.container .container__form form input[type="submit"]:active
+{
+    transform: scale(1) translateY(.3rem);
+}
